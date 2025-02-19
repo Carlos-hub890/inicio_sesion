@@ -13,14 +13,16 @@ body {
 
 .dashboard-container {
     width: 100%;
-    height: 4146px; /* Altura exacta del SVG */
-    position: relative;
+    /* Calcula la altura en función de la anchura actual y la relación de aspecto del SVG */
+    height: calc(100vw * (4146 / 1440));
     background-image: url('../images/home.svg');
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size :auto; /* Tamaño exacto del SVG */
-    margin: auto;
+    background-position: top center; /* Alinea la imagen desde arriba y centrada horizontalmente */
+    background-size: 100% 100%; /* La imagen se adapta completamente al contenedor */
 }
+
+
+
 
 .header {
     position: fixed;
@@ -62,9 +64,11 @@ body {
 /* Media query para pantallas más pequeñas */
 @media (max-width: 1440px) {
     .dashboard-container {
-        background-size: contain;
+        background-size: cover; /* Mantiene la imagen ajustada */
+        background-position: center; /* Centra bien la imagen */
         width: 100%;
-        height: auto;
         min-height: 100vh;
     }
 }
+
+
